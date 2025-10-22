@@ -10,11 +10,16 @@
     <Target Name="CleanTargetFolder" BeforeTargets="BeforeBuild">
         <!-- Удаляем папку в выходной директории -->
         <RemoveDir Directories="$(OutputPath)FileToBase64"/>
+        <RemoveDir Directories="$(OutputPath)Base64ToFile"/>
         <Message Text="Очищена папка: $(OutputPath)FileToBase64" Importance="high"/>
+        <Message Text="Очищена папка: $(OutputPath)Base64ToFile" Importance="high"/>
     </Target>
 
     <ItemGroup>
         <Content Include="FileToBase64\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Base64ToFile\**">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

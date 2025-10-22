@@ -35,10 +35,10 @@ class Program
             {
                 case "1":
                     logger.Log("Выбрана команда base64ToFile");
+                    Converter.ConvertToFile(settings.decoder.dirFrom, settings.decoder.fileName, logger);
                     break;
                 case "2":
                     logger.Log("Выбрана команда fileToBase64");
-                    var dirAbsPath = Directory.GetCurrentDirectory();
                     Converter.ConvertToBase64(settings.encoder.dirFrom, logger);
                     break;
                 default:
