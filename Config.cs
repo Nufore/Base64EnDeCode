@@ -2,8 +2,8 @@ namespace Base64EnDeCode;
 
 public class Config
 {
-    Decoder decoder;
-    Encoder encoder;
+    public Decoder decoder { get; set; }
+    public Encoder encoder { get; set; }
 }
 
 public class Decoder
